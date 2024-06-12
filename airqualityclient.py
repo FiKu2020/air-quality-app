@@ -12,3 +12,19 @@ class AirQualityServiceClient:
             return response.json()
         else:
             response.raise_for_status()
+
+    def validation_and_transformation_of_data(self,data):
+        if "info " not in data:
+            raise ValueError    #sprawdzanie czy mamy wyst danych
+        
+        #pobieranie danych o pogodzie i zaniecz pow
+        weather_status = 
+        pollution_status = ""
+        temp = ""
+        pressure =""
+            #validacja wartosci
+        if not (-50 <= temp <= 50):
+           raise ValueError("Temperature value out of range")
+        if not (800 <= pressure <= 1200):
+           raise ValueError("Pressure value out of range")
+
