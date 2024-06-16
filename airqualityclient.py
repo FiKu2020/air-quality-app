@@ -18,7 +18,7 @@ class AirQualityServiceClient:
             raise ValueError    #sprawdzanie czy mamy wyst danych
         
         #pobieranie danych o pogodzie i zaniecz pow
-        weather_status = 
+        weather_status = ""
         pollution_status = ""
         temp = ""
         pressure =""
@@ -28,3 +28,13 @@ class AirQualityServiceClient:
         if not (800 <= pressure <= 1200):
            raise ValueError("Pressure value out of range")
 
+        transformed_data = {
+        'city': "Warsaw",
+        'state': "Mazovia",
+        'country': "Poland",
+        'temp': temp,
+        'pressure': pressure,
+        'aq_index': pollution_status['aqius'],
+        'timestamp': weather_status['ts']}
+        return transformed_data
+    
